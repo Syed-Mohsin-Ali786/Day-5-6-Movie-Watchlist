@@ -8,7 +8,9 @@ function CreateContext({ children }) {
   const [searchValue, setSearchValue] = useState("");
   const [error, setError] = useState();
   const [movieData, setMovieData] = useState([]);
-const [watchlist,setWatchList]=useState([]);
+const [watchlist,setWatchList]=useState(()=>{
+  return JSON.parse(localStorage.getItem("WatchList")) || [];
+});
   // Bundle everything in one object
   const contextValue = {
     searchValue,

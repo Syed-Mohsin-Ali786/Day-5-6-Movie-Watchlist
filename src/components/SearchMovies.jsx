@@ -10,7 +10,7 @@ function SearchMovies() {
       .then((data) => {
         if (data.Response == "False") {
           setError(data.Error);
-          setMovieData(null);
+          setMovieData((prev)=>[...prev]);
         } else {
           console.log(data);
           setMovieData((prev) => (prev ? [...prev, data] : [data]));
@@ -35,6 +35,11 @@ function SearchMovies() {
             placeholder="Enter a Movie Name"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
+            onKeyUp={(e)=>{
+              if(e.key==="Enter"){
+                handleClick();
+              }
+            }}
           />
           <button onClick={handleClick} className="bg-green-700 py-2 px-4">
             Search
