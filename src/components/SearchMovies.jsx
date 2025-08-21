@@ -6,12 +6,13 @@ function SearchMovies() {
     useContext(MyContext);
   const [isFocused, setIsFocused] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
+const apiKey = import.meta.env.VITE_OMDB_API_KEY; 
   const handleClick = () => {
     if (!searchValue.trim()) return;
 
     setIsLoading(true);
-    fetch(`http://www.omdbapi.com/?t=${searchValue}&apikey=5dc7558f`)
+    fetch(`https://www.omdbapi.com/?t=${searchValue}&apikey=${apiKey}`)
+
       .then((response) => response.json())
       .then((data) => {
         if (data.Response == "False") {

@@ -118,25 +118,7 @@ function ShowMovieList() {
         )}
       </div>
    <WatchList/>
-      <style jsx>{`
-        .movie-card {
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .line-clamp-1 {
-          display: -webkit-box;
-          -webkit-line-clamp: 1;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-
-        .line-clamp-3 {
-          display: -webkit-box;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-      `}</style>
+     
     </div>
   );
 }
